@@ -28,7 +28,7 @@ public:
 	void show(int i);
 	void show();
 	//деструктор
-	~Complex() {};
+	~Complex() { };
 	//перегрузки
 	Complex operator+(Complex b);
 	Complex operator-(Complex b);
@@ -100,6 +100,7 @@ void vect_sum(Complex comp3[], Complex comp4[], int n)
 		if (j != (n - 1))cout << ", ";
 	}
 	cout << "}.\n";
+	delete[] comp5;
 }
 
 //******************** MAIN **************************** 
@@ -186,5 +187,7 @@ void main()
 	cout << "}.\n\n";
 	vect_sum( comp3, comp4, n);
 
+	delete[] comp3;
+	delete[] comp4;
 	while (!_kbhit());
 }
